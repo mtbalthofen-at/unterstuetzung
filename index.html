@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -19,89 +19,100 @@
       align-items: center;
     }
 
-    .logo {
-      width: 80%;
-      max-width: 300px;
-      height: auto;
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
+```
+.logo {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
-    .container {
-      background: rgba(0, 0, 0, 0.75);
-      padding: 2em;
-      border-radius: 20px;
-      width: 100%;
-      max-width: 600px;
-      box-sizing: border-box;
-    }
+.container {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 2em;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
 
-    h1 {
-      font-weight: 500;
-      margin-bottom: 1em;
-      font-size: 1.8em;
-    }
+h1 {
+  font-weight: 500;
+  margin-bottom: 1em;
+  font-size: 1.8em;
+}
 
-    button, a.button-link {
-      border: none;
-      border-radius: 10px;
-      padding: 1em;
-      margin: 0.5em 0;
-      font-size: 1.5em;
-      cursor: pointer;
-      width: 90%;
-      max-width: 300px;
-      transition: background 0.3s ease;
-      display: inline-block;
-      text-decoration: none;
-      text-align: center;
-    }
+button, a.button-link {
+  border: none;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 0.5em 0;
+  font-size: 1.5em;
+  cursor: pointer;
+  width: 90%;
+  max-width: 300px;
+  transition: background 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
 
-    .paypal-btn {
-      background-color: #0070ba;
-      color: #fff;
-    }
-    .paypal-btn:hover {
-      background-color: #005c99;
-    }
+.paypal-btn {
+  background-color: #0070ba;
+  color: #fff;
+}
+.paypal-btn:hover {
+  background-color: #005c99;
+}
 
-    .bank-btn {
-      background-color: #5c8828;
-      color: #fff;
-    }
-    .bank-btn:hover {
-      background-color: #4a6f1f;
-    }
+.bank-btn {
+  background-color: #5c8828;
+  color: #fff;
+}
+.bank-btn:hover {
+  background-color: #4a6f1f;
+}
 
-    .member-btn {
-      background-color: #f7941e;
-      color: #fff;
-    }
-    .member-btn:hover {
-      background-color: #d87c00;
-    }
+.member-btn {
+  background-color: #f7941e;
+  color: #fff;
+}
+.member-btn:hover {
+  background-color: #d87c00;
+}
 
-    #bank-details {
-      display: none;
-      font-size: 1.3em;
-      margin-top: 2em;
-      text-align: left;
-    }
+#bank-details {
+  display: none;
+  font-size: 1.3em;
+  margin-top: 2em;
+  text-align: left;
+}
 
-    strong {
-      display: block;
-      margin-top: 0.3em;
-    }
+strong {
+  display: block;
+  margin-top: 0.3em;
+}
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5em;
-      }
-      button, a.button-link {
-        font-size: 1em;
-        padding: 0.9em;
-      }
-    }
+#copyMessage {
+  display: none;
+  color: #7dff7d;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  button, a.button-link {
+    font-size: 1em;
+    padding: 0.9em;
+  }
+}
+```
+
   </style>
 </head>
 <body>
@@ -111,16 +122,32 @@
     <h1>Unterstützung für MTB-ALTHOFEN</h1>
     <p>Wähle deine bevorzugte Zahlungsart:</p>
 
-    <button class="paypal-btn" onclick="window.location.href='https://www.paypal.com/paypalme/xxmuchexx'">PayPal</button>
-    <button class="bank-btn" onclick="toggleBank()" id="toggleBtn" aria-expanded="false">Banküberweisung</button>
+```
+<button class="paypal-btn" onclick="window.location.href='https://www.paypal.com/paypalme/xxmuchexx'">PayPal</button>
+<button class="bank-btn" onclick="toggleBank()" id="toggleBtn" aria-expanded="false">Banküberweisung</button>
 
-    <div id="bank-details">
-      IBAN:<strong>AT64 XXXX XXXX XXXX XXXX X</strong>
-      Empfänger:<strong>MTB-ALTHOFEN</strong>
-      Verwendungszweck:<strong>Unterstützung</strong>
-    </div>
+<div id="bank-details">
+  IBAN:
+  <strong>AT29 3950 1000 0007 1860</strong>
 
-    <a class="button-link member-btn" href="mitglied.html" target="_blank">Werde Mitglied</a>
+  Empfänger:
+  <strong>MTB-ALTHOFEN</strong>
+
+  Verwendungszweck:
+  <strong>Unterstützung</strong>
+
+  <button class="bank-btn" onclick="copyPaymentData()" style="margin-top:15px;">
+    📋 Zahlungsdaten kopieren
+  </button>
+
+  <div id="copyMessage">
+    ✓ Zahlungsdaten wurden kopiert
+  </div>
+</div>
+
+<a class="button-link member-btn" href="mitglied.html" target="_blank">Werde Mitglied</a>
+```
+
   </div>
 
   <script>
@@ -128,9 +155,31 @@
       const details = document.getElementById('bank-details');
       const btn = document.getElementById('toggleBtn');
       const visible = details.style.display === 'block';
+
       details.style.display = visible ? 'none' : 'block';
       btn.setAttribute('aria-expanded', String(!visible));
     }
+
+    function copyPaymentData() {
+      const paymentData =
+`Empfänger: MTB-ALTHOFEN
+IBAN: AT29 3950 1000 0007 1860
+Verwendungszweck: Unterstützung`;
+
+      navigator.clipboard.writeText(paymentData)
+        .then(() => {
+          const msg = document.getElementById('copyMessage');
+          msg.style.display = 'block';
+
+          setTimeout(() => {
+            msg.style.display = 'none';
+          }, 3000);
+        })
+        .catch(() => {
+          alert('Kopieren leider nicht möglich.');
+        });
+    }
   </script>
+
 </body>
 </html>
